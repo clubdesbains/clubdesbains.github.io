@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Flexslider image, HTML5 video slider</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/flexslider.min.css'>
+<style>
+
+.flexslider .slides>li {
+    display: none;
+    -webkit-backface-visibility: hidden;
+}
+  .flexslider .slides img {
+    width: auto;
+    display: initial;
+    height: auto;
+    -moz-user-select: none;
+    zoom: normal;
+}
+
+.flexslider {
+    text-align: center;
+    margin: 0 0 36px;
+    zoom: normal;
+}
+
+.flexslider .slides {
+    zoom: normal;
+}
+
+.flex-active-slide{
+    display: block !important;
+}
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="slider" class="flexslider">
+<ul class="slides">
+<li><img class="sliderElement" src="img/pvolley.jpeg" /></li>
+<li><img class="sliderElement" src="img/pvolley2.jpg" /></li>
+<li><img class="sliderElement"  src="img/pvolley3.jpeg" /></li>
+<li><img class="sliderElement"  src="img/pvolley4.jpeg" /></li>
+<li><img class="sliderElement"  src="img/pvolley7.jpg" /></li>
+<li><img class="sliderElement"  src="img/pvolley8.jpeg" /></li>
+<li><img class="sliderElement"  src="img/pvolley10.jpeg" /></li>
+<li><img class="sliderElement"  src="img/pvolley11.jpeg" /></li>
+<!--<li><img src="https://archive.org/download/mbid-7fbdce41-848d-46e2-8d5e-d9cf5d9060d9/mbid-7fbdce41-848d-46e2-8d5e-d9cf5d9060d9-7915427835.jpg" /></li>
+<li><video onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none" width="100%" height="100%" poster="https://archive.org/download/mbid-203a92a8-2e72-402a-9f69-a928c693077d/mbid-203a92a8-2e72-402a-9f69-a928c693077d-3882273894.jpg" >
+<source src="https://archive.org/download/CEP158WS/CEP158WS_512kb.mp4" type='video/mp4' />
+</video></li> -->
+</ul>
+</div>
+<!-- partial -->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+<script src='sliderScript.js'></script><script  src="./script.js"></script>
+
+<script>
+  $("#picturesSliderButton").click(function() {
+    $("#slider_container").css("display" , "block");
+    });
+
+  $("#slider_close").click(function() {
+    $("#slider_container").css("display" , "none");
+  });
+
+  $(document).ready(function() {
+
+    var sliderHeight = window.outerHeight;
+    var sliderWidth = window.outerWidth;
+    var portrait = "true";
+
+    if(sliderHeight > sliderWidth){
+      console.log("portrait")
+      sliderWidth = sliderWidth - 60;
+      $(".sliderElement").css("height" , "auto");
+      $(".sliderElement").css("width" , "100%");
+      portrait = "true"
+    }else{
+      console.log("paysage")
+      sliderWidth = sliderWidth - 60;
+      sliderHeight = sliderHeight - 200;
+      $(".sliderElement").css("height" , sliderHeight+"px");
+      $(".sliderElement").css("width" , "auto");
+      portrait = "false"
+    }
+
+
+    if($( ".flexslider .slides>li" ).hasClass( "flex-active-slide" )){
+    console.log("fsdfasdg");
+    $( ".flexslider .slides>li" ).attr("style" , "display:block !important")
+    }else{
+      console.log("asbav");
+      $( ".flexslider .slides>li" ).attr("style" , "display:none !important")
+    }
+  });
+
+  $( window ).resize(function() {
+    var sliderHeight = window.outerHeight;
+    var sliderWidth = window.outerWidth;
+    var portrait = "true";
+
+    if(sliderHeight > sliderWidth){
+      console.log("portrait")
+      sliderWidth = sliderWidth - 60;
+      $(".sliderElement").css("height" , "auto");
+      $(".sliderElement").css("width" , "100%");
+      portrait = "true"
+    }else{
+      console.log("paysage")
+      sliderWidth = sliderWidth - 60;
+      sliderHeight = sliderHeight - 200;
+      $(".sliderElement").css("height" , sliderHeight+"px");
+      $(".sliderElement").css("width" , "auto");
+      portrait = "false"
+    }
+});
+
+
+  </script>
+</body>
+</html>

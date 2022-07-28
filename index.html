@@ -1,0 +1,581 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+				<title>Massively by HTML5 UP</title>
+				<meta charset="utf-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+				<link rel="stylesheet" href="assets/css/main.css" />
+			<!--<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>-->
+				<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/flexslider.min.css'>
+			<style>
+			#slider_container{
+				display:none;
+			position: fixed;
+			width: 100%;
+			background-color: rgba(255, 255, 255, 0.8);
+			height:100%;
+			z-index: 5;
+			}
+
+			#jssor_1{
+				top:10%;
+				position:relative;
+				margin:0 auto;
+				top: 20%;
+				left:0px;
+				width:600px;
+				height:500px;
+				overflow:hidden;
+				visibility:hidden;
+			}
+
+			#slider_close {
+				top: -3%;
+				font-size: 25px;
+				font-weight: 700;
+				right: 1%;
+				position: fixed;
+				font-family: sans-serif;
+				color: black;
+				z-index: 5;
+				-webkit-text-stroke: 2px white;
+				cursor: pointer;
+			}
+
+			#picturesOverlay{
+				display:none;
+				position: fixed;
+				z-index: 6;
+				width: 100%;
+				margin: 0 auto;
+				text-align: center;
+				background-color: rgba(255, 255, 255, 0.8);
+			}
+
+			.imgPicturesOverlay{
+				width: 70%;
+				margin: 0 auto;
+				text-align: center;
+			}
+
+			.scoreLine {
+				padding-left: 0.5rem;
+				border-bottom: 1px solid;
+			}
+
+		.imgScores{
+			height:100px;
+			margin-top: 15px;
+			margin-bottom: -13px;
+			}
+
+			.flexslider .slides img {
+			width: auto;
+			display: initial;
+			height: 473px;
+			-moz-user-select: none;
+		}
+
+
+		.flexslider .slides>li {
+			display: none;
+			-webkit-backface-visibility: hidden;
+		}
+		.flexslider .slides img {
+			width: auto;
+			display: initial;
+			height: auto;
+			-moz-user-select: none;
+			zoom: normal;
+		}
+
+		.flexslider {
+			text-align: center;
+			margin: 0 0 36px;
+			zoom: normal;
+			margin: 0;
+			position: absolute;
+			background-color: transparent;
+			background:transparent;
+			border:none;
+			top: 50%;
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+		}
+
+		.flexslider .slides {
+			zoom: normal;
+		}
+
+		.flex-active-slide{
+			display: block !important;
+		}
+
+		.flex-direction-nav a {
+			height: 67px;
+		}
+
+		.flex-direction-nav .flex-next {
+			-webkit-text-stroke: 2px white;
+			border:none;
+		}
+
+		.flex-direction-nav .flex-prev {
+			-webkit-text-stroke: 2px white;
+			border:none;
+		}
+
+		main > .post header.major > h1, #main > .post header.major h2 {
+			margin: 0 auto;
+		}
+
+		#main > .post header.major > .date {
+			margin-top: -4rem;
+		}
+
+		header.major > .date {
+			font-size: 1rem;
+			margin: 0 auto;
+		}
+
+		@media screen and (max-width: 896px){
+			#intro {
+				padding: 3rem 2rem 1rem 2rem;
+				min-height: 45vh;
+			}
+		}
+
+		@media screen and (max-width: 896px) and (orientation: landscape) {
+		.flexslider .slides img {
+			width: auto;
+			display: initial;
+			height: 330px !important;
+			-moz-user-select: none;
+			zoom: normal;
+		}
+
+		.flexslider {
+			position: relative;
+		}
+
+		#slider_close {
+			top: 6%;
+		}
+
+		}
+		</style>
+
+
+
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<div id="picturesOverlay">
+					<img class="imgPicturesOverlay" src="" alt="" />
+
+				</div>
+				<!-- partial:index.partial.html -->
+<div id="slider_container">
+
+<div id="slider" class="flexslider">
+	<div id="slider_close">X</div>
+	<ul class="slides">
+	<li><img class="sliderElement" src="./slider3/dist/img/pvolley.jpeg" /></li>
+	<li><video onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none" width="80%%" height="80%">
+		<source src="https://archive.org/download/CEP158WS/CEP158WS_512kb.mp4" type='video/mp4' />
+		</video></li>
+	<li><img class="sliderElement" src="./slider3/dist/img/pvolley2.jpg" /></li>
+	<li><img class="sliderElement"  src="./slider3/dist/img/pvolley3.jpeg" /></li>
+	<li><img class="sliderElement"  src="./slider3/dist/img/pvolley4.jpeg" /></li>
+	<li><img class="sliderElement"  src="./slider3/dist/img/pvolley7.jpg" /></li>
+	<li><img class="sliderElement"  src="./slider3/dist/img/pvolley8.jpeg" /></li>
+	<li><img class="sliderElement"  src="./slider3/dist/img/pvolley10.jpeg" /></li>
+	<li><img class="sliderElement"  src="./slider3/dist/img/pvolley11.jpeg" /></li>
+	<!--<li><img src="https://archive.org/download/mbid-7fbdce41-848d-46e2-8d5e-d9cf5d9060d9/mbid-7fbdce41-848d-46e2-8d5e-d9cf5d9060d9-7915427835.jpg" /></li>
+	<li><video onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none" width="100%" height="100%" poster="https://archive.org/download/mbid-203a92a8-2e72-402a-9f69-a928c693077d/mbid-203a92a8-2e72-402a-9f69-a928c693077d-3882273894.jpg" >
+	<source src="https://archive.org/download/CEP158WS/CEP158WS_512kb.mp4" type='video/mp4' />
+	</video></li> -->
+	</ul>
+	</div>
+</div>
+	<!-- partial -->
+	  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+	<script src='./slider3/dist/sliderScript.js'></script>
+	<script src="./slider3/dist/script2.js"></script>
+	
+	<script>
+	  $("#picturesSliderButton").click(function() {
+		$("#slider_container").css("display" , "block");
+		});
+	
+	  $("#slider_close").click(function() {
+		$("#slider_container").css("display" , "none");
+	  });
+
+
+	  </script>
+
+
+				<!-- Intro -->
+					<div id="intro">
+						<h1>Sports & Loisirs<br />
+						Bains des Paquis</h1>
+						<p>Définition ou petit text ou rien</p>
+						<ul class="actions" style="border:none;">
+							<li style="border:none;"><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Massively</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Actualité</a></li>
+							<li><a href="generic.html">Secion 2</a></li>
+							<li><a href="elements.html">Contact</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<span class="date">09 Juillet, 2022</span>
+									<h2><a href="#">Tournoi de<br />
+									water volleyball</a></h2>
+										<!--<p>Un petit text explicatif ou rien.</p> -->
+								</header>
+								<a href="#" class="image main"><img src="images/volleyball1.png" alt="" /></a>
+								<!--<ul class="actions special">
+									<li><a href="#" class="button large">Full Story</a></li>
+								</ul>-->
+							</article>
+
+						<!-- Posts -->
+							<section class="posts">
+								<article>
+									<header>
+															<!--  	<span class="date">April 24, 2017</span>-->
+										<h2><a href="#">Règles<br />
+										du tournoi</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/volleyVanRules.jpeg" alt="" /></a>
+									<p>Une fille minimum par équipe (6 personnes)<br />Pas de discussion avec l'arbitre<br />Ne pas aller du côté du terrain adverse<br />Pas de balle portée<br />Les services contre la ligne de fond</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<!--  	<span class="date">April 24, 2017</span>-->
+										<h2><a id="picturesSliderButton">Gallerie<br /> Photos
+										</a></h2>
+									</header>
+									<a class="image fit"><img src="images/pvolley.jpeg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article style="width:100%;">
+									<header>
+										<!--  	<span class="date">April 24, 2017</span>-->
+										<h2><a href="#">Les<br />
+										scores</a></h2>
+									</header>
+									<div>
+										<ul style="list-style: none;">
+											<li class="scoreLine">
+												<img class="imgScores" src="images/lesplongeurs.jpeg" alt="" /> <img class="imgScores" src="images/gUnit2.jpeg" alt="" />	<br/>
+												Los Machuppos 15 - 10 G Unit
+											</li>
+											<li class="scoreLine">
+												<img class="imgScores" src="images/lospendejos.jpeg" alt="" /> <img class="imgScores" src="images/gUnit2.jpeg" alt="" />	<br/>Los Pendejos 11 - 15 Nixamam
+											</li>
+											<li class="scoreLine">
+												<img class="imgScores" src="images/pks.jpeg" alt="" /> <img class="imgScores" src="images/6gishts.jpeg" alt="" />	<br/>
+												PKS 11 - 15 6 Gisht's
+											</li>
+											<li class="scoreLine">
+												<img class="imgScores" src="images/bainsdespaquis.jpeg" alt="" /> <img class="imgScores" src="images/6gishts.jpeg" alt="" />	<br/>
+												Bains des Paquis 15 - 9 Les Loosers
+											</li>
+											<li class="scoreLine">
+												<img class="imgScores" src="images/gUnit2.jpeg" alt="" /> <img class="imgScores" src="images/6gishts.jpeg" alt="" />	<br/>
+												G Unit 15 - 3 Los Machupos
+											</li>
+											<li class="scoreLine">
+												<img class="imgScores" src="images/fcgeneve.jpeg" alt="" /> <img class="imgScores" src="images/nixamam.jpeg" alt="" />	<br/>
+												FC Genève 9 - 15 Nixamam
+											</li>
+											<li class="scoreLine">
+												<img class="imgScores" src="images/lesplongeurs.jpeg" alt="" /> <img class="imgScores" src="images/6gishts.jpeg" alt="" />	<br/>
+												Les Plongeurs 15 - 12 6 Gisht's
+											</li>
+											<li class="scoreLine">
+												<img class="imgScores" src="images/lesplongeurs.jpeg" alt="" /> <img class="imgScores" src="images/lesforceurs.jpeg" alt="" />	<br/>
+												Les Loosers 7 - 15 Les Forceurs
+											</li>
+											<li class="scoreLine">
+												<img class="imgScores" src="images/lospendejos.jpeg" alt="" /> <img class="imgScores" src="images/lesplongeurs.jpeg" alt="" />	<br/>
+												Los Pendejos 15 - 0 (forfait) Les loosers
+											</li>
+											<li class="scoreLine">
+												<img class="imgScores" src="images/lesplongeurs.jpeg" alt="" /> <img class="imgScores" src="images/pks.jpeg" alt="" />	<br/>
+												Les Plongeurs 6 - 15 PKS
+											</li>
+											<li class="scoreLine">
+												<img class="imgScores" src="images/lesforceurs.jpeg" alt="" /> <img class="imgScores" src="images/bainsdespaquis.jpeg" alt="" />	<br/>
+												Les Forceurs 15 - 9 Bains des Paquis
+											</li>
+										</ul>
+									</div>
+									<a href="#" style="width:50%;margin:0 auto;" class="image fit"><img src="images/pvolley3.jpeg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+											<!--  	<span class="date">April 24, 2017</span>-->
+										<h2><a href="#">Tempus sed<br />
+										nulla imperdiet</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 11, 2017</span>
+										<h2><a href="#">Odio magna<br />
+										sed consectetur</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 7, 2017</span>
+										<h2><a href="#">Augue lorem<br />
+										primis vestibulum</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+							</section>
+
+						<!-- Footer -->
+							<footer>
+								<div class="pagination">
+									<!--<a href="#" class="previous">Prev</a>-->
+									<a href="#" class="page active">1</a>
+									<a href="#" class="page">2</a>
+									<a href="#" class="page">3</a>
+									<span class="extra">&hellip;</span>
+									<a href="#" class="page">8</a>
+									<a href="#" class="page">9</a>
+									<a href="#" class="page">10</a>
+									<a href="#" class="next">Next</a>
+								</div>
+							</footer>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>1234 Somewhere Road #87257<br />
+								Nashville, TN 00000-0000</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(000) 000-0000</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">info@untitled.tld</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<!--<script src="assets/js/jquery.min.js"></script> -->
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+		<script>
+			$("#picturesSliderButton").click(function() {
+				$("#slider_container").css("display" , "block");
+			  });
+
+			$("#slider_close").click(function() {
+				$("#slider_container").css("display" , "none");
+			});
+
+			$(".imgScores").click(function() {
+				$("#picturesOverlay").css("display" , "block");
+				var urlPicture = $(this).attr('src');
+				$(".imgPicturesOverlay").attr("src" , urlPicture);
+			});
+
+			$("#picturesOverlay").click(function() {
+				$("#picturesOverlay").css("display" , "none");
+			});
+	
+			/*
+			$('#slider').click(function() {
+				// do something here
+				console.log("fsdfasdg")
+				});
+							$(body).ready(function() {
+								var height = window.outerHeight;
+								var width = window.outerWidth;
+								$('body').click(function() {
+				// do something here
+				console.log("fsdfasdg")
+				});
+								
+							});
+
+				$('body').click(function() {
+				// do something here
+				console.log("fsdfasdg")
+				});
+
+				$('#slider').click(function() {
+				// do something here
+				console.log("fsdfasdg")
+			});*/
+
+			$(document).ready(function() {
+	
+	var sliderHeight = window.outerHeight;
+	var sliderWidth = window.outerWidth;
+	var portrait = "true";
+
+	if(sliderHeight > sliderWidth){
+	  console.log("portrait")
+	  sliderWidth = sliderWidth - 60;
+	  $(".sliderElement").css("height" , "auto");
+	  $(".sliderElement").css("width" , "100%");
+	  portrait = "true"
+	}else{
+	  console.log("paysage")
+	  sliderWidth = sliderWidth - 60;
+	  sliderHeight = sliderHeight - 200;
+	  $(".sliderElement").css("height" , sliderHeight+"px");
+	  $(".sliderElement").css("width" , "auto");
+	  portrait = "false"
+	}
+
+
+	if($( ".flexslider .slides>li" ).hasClass( "flex-active-slide" )){
+	console.log("fsdfasdg");
+	$( ".flexslider .slides>li" ).attr("style" , "display:block !important")
+	}else{
+	  console.log("asbav");
+	  $( ".flexslider .slides>li" ).attr("style" , "display:none !important")
+	}
+  });
+
+  $( window ).resize(function() {
+	var sliderHeight = window.outerHeight;
+	var sliderWidth = window.outerWidth;
+	var portrait = "true";
+
+	if(sliderHeight > sliderWidth){
+	  console.log("portrait")
+	  sliderWidth = sliderWidth - 60;
+	  $(".sliderElement").css("height" , "auto");
+	  $(".sliderElement").css("width" , "100%");
+	  portrait = "true"
+	}else{
+	  console.log("paysage")
+	  sliderWidth = sliderWidth - 60;
+	  sliderHeight = sliderHeight - 200;
+	  $(".sliderElement").css("height" , sliderHeight+"px");
+	  $(".sliderElement").css("width" , "auto");
+	  portrait = "false"
+	}
+});
+
+
+			</script>
+
+
+	</body>
+</html>
