@@ -47,6 +47,24 @@
 				cursor: pointer;
 			}
 
+			#slider_filter{
+				top: -3%;
+				font-size: 25px;
+				font-weight: 700;
+				right: 4%;
+				position: fixed;
+				font-family: sans-serif;
+				color: black;
+				z-index: 5;
+				-webkit-text-stroke: 2px white;
+				cursor: pointer;
+				width:50px;
+				height:50px;
+				border-radius:45px;
+				background-color: white;
+				border:10px solid black;
+			}
+
 			#picturesOverlay{
 				display:none;
 				position: fixed;
@@ -188,6 +206,7 @@
 
 <div id="slider" class="flexslider">
 	<div id="slider_close">X</div>
+	<div id="slider_filter" class="blackwhite" alt="black & white"></div>
 	<ul class="slides">
 	<li><img class="sliderElement" src="./slider3/dist/img/pvolley.jpeg" /></li>
 
@@ -231,7 +250,7 @@
 					<div id="intro">
 						<img src="./images/logo.png" style="max-height: 300px; padding-bottom: 28px;";/>
 						<h1>Club Des Bains</h1>
-						<p>Des gens qui boudent pas</p>
+						<p>Des gens qui ne boudent pas</p>
 						<ul class="actions" style="border:none;">
 							<li style="border:none;"><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
@@ -488,6 +507,16 @@
 				$("#slider_container").css("display" , "none");
 			});
 
+			$("#slider_filter").click(function() {
+				if($("#slider_filter").hasClass("blackwhite")){
+				$(".flexslider .slides img").css("filter" , "grayscale(100%)");
+				$("#slider_filter").attr("class" , "colors")
+			}else{
+				$(".flexslider .slides img").css("filter" , "grayscale(0%)");
+				$("#slider_filter").attr("class" , "blackwhite")
+			}
+			});
+
 			$(".imgScores").click(function() {
 				$("#picturesOverlay").css("display" , "block");
 				var urlPicture = $(this).attr('src');
@@ -524,6 +553,29 @@
 			});*/
 
 			$(document).ready(function() {
+
+				
+ fetch("https://magic-gateway.magic-gateway.workers.dev/", {
+  "headers": {
+    "accept": "application/json",
+    "accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",
+    "cache-control": "no-cache",
+    "content-type": "application/json; charset=UTF-8",
+    "pragma": "no-cache",
+	"Referer": "www.clubdesbains.ch"
+  },
+  "referrerPolicy": "strict-origin-when-cross-origin",
+  "body": "{\"url\": \"https://www.bains-des-paquis.ch/get_temperature\", \"method\": \"GET\", \"headers\": {}}",
+  "method": "POST",
+  "mode": "no-cors",
+  "credentials": "omit"
+}).then((response) => {
+	console.log(response.body);
+	return response.text();
+  })
+  .then((response) => {
+    console.log(response);
+  });;
 	
 	var sliderHeight = window.outerHeight;
 	var sliderWidth = window.outerWidth;
@@ -574,14 +626,37 @@
 	  portrait = "false"
 	}
 
-	$.ajax({
-    url:'https://www.bains-des-paquis.ch/get_temperature',
-        type:'GET',
-        success: function(data){
-			alert("faslfjsalkf")
-           alert($('body').html());
-        }
-});
+	/* var settings = {
+          'cache': false,
+          'dataType': "jsonp",
+          "async": true,
+          "crossDomain": true,
+          "url": "https://www.bains-des-paquis.ch/get_temperature",
+          "method": "GET",
+          "headers": {
+              "accept": "application/json",
+              "Access-Control-Allow-Origin":"*"
+          }
+      }
+
+	  $.ajax(settings).done(function (response) {
+          console.log(response);
+
+      }); */
+
+	  /* $.ajax({
+            headers: {"Accept": "application/json", "Origin": "www.clubdesbains.ch"},
+            type: 'POST',
+			data: '{"url": "https://www.bains-des-paquis.ch/get_temperature", "method": "GET", "headers": {}}',
+            url: 'https://magic-gateway.magic-gateway.workers.dev',
+            crossDomain: true,
+            beforeSend: function(xhr){
+                xhr.withCredentials = true;
+          },
+            success: function(data, textStatus, request){
+                console.log(data);
+            }
+ }); */
 
 
 });
