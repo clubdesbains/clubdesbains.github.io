@@ -573,6 +573,16 @@
 	  $(".sliderElement").css("width" , "auto");
 	  portrait = "false"
 	}
+
+	$.ajax({
+    url:'https://www.bains-des-paquis.ch/get_temperature',
+        type:'GET',
+        success: function(data){
+           alert($('body').html());
+        }
+});
+
+
 });
 
 
