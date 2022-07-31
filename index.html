@@ -122,6 +122,7 @@
 			background:transparent;
 			border:none;
 			top: 50%;
+			width:100%;
 			-ms-transform: translateY(-50%);
 			transform: translateY(-50%);
 		}
@@ -198,6 +199,11 @@
 				cursor: pointer;
 			}
 
+			.videoSlider {
+				width:95%;
+				height:95%;
+			}
+
 		}
 
 		@media screen and (max-width: 896px) and (orientation: landscape) {
@@ -238,16 +244,16 @@
 	<div id="slider_filter" class="blackwhite" alt="black & white"></div>
 	<ul class="slides">
 	<li><img class="sliderElement" src="./slider3/dist/img/pvolley.jpeg" /></li>
-	<li><video onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none" width="80%%" height="80%">
+	<li><video class="videoSlider" onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none">
 		<source src="./slider3/dist/img/vidVolley2.mp4" type='video/mp4' />
 		</video></li>
 		<li><img class="sliderElement" src="./slider3/dist/img/pvolley2.jpg" /></li>
 	<li><img class="sliderElement"  src="./slider3/dist/img/pvolley3.jpeg" /></li>
-	<li><video onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none" width="80%%" height="80%">
+	<li><video class="videoSlider" onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none">
 		<source src="./slider3/dist/img/vidVolley3.mp4" type='video/mp4' />
 		</video></li>
 	<li><img class="sliderElement"  src="./slider3/dist/img/pvolley4.jpeg" /></li>
-	<li><video onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none" width="80%%" height="80%">
+	<li><video class="videoSlider" onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none">
 		<source src="./slider3/dist/img/vidVolley4.mp4" type='video/mp4' />
 		</video></li>
 	<li><img class="sliderElement"  src="./slider3/dist/img/pvolley7.jpg" /></li>
