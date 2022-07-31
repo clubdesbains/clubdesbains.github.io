@@ -35,7 +35,7 @@
 			}
 
 			#slider_close {
-				top: -3%;
+				top: -5%;
 				font-size: 25px;
 				font-weight: 700;
 				right: 1%;
@@ -48,21 +48,21 @@
 			}
 
 			#slider_filter{
-				top: -3%;
+				top: -2.5%;
 				font-size: 25px;
 				font-weight: 700;
-				right: 4%;
+				right: 3%;
 				position: fixed;
 				font-family: sans-serif;
 				color: black;
 				z-index: 5;
 				-webkit-text-stroke: 2px white;
 				cursor: pointer;
-				width:50px;
-				height:50px;
+				width:22px;
+				height:22px;
 				border-radius:45px;
 				background-color: white;
-				border:10px solid black;
+				border:5px solid black;
 			}
 
 			#picturesOverlay{
@@ -166,6 +166,38 @@
 				padding: 3rem 2rem 1rem 2rem;
 				min-height: 45vh;
 			}
+
+			#slider_filter {
+				top: 1%;
+				font-size: 25px;
+				font-weight: 700;
+				right: 7%;
+				position: absolute;
+				font-family: sans-serif;
+				color: black;
+				z-index: 5;
+				-webkit-text-stroke: 2px white;
+				cursor: pointer;
+				width: 20px;
+				height: 20px;
+				border-radius: 45px;
+				background-color: white;
+				border: 5px solid black;
+			}
+
+			#slider_close {
+				top: -2%;
+				font-size: 22px;
+				font-weight: 700;
+				right: 1%;
+				position: absolute;
+				font-family: sans-serif;
+				color: black;
+				z-index: 5;
+				-webkit-text-stroke: 2px white;
+				cursor: pointer;
+			}
+
 		}
 
 		@media screen and (max-width: 896px) and (orientation: landscape) {
@@ -188,9 +220,6 @@
 		}
 		</style>
 
-
-
-
 	</head>
 	<body class="is-preload">
 
@@ -209,12 +238,18 @@
 	<div id="slider_filter" class="blackwhite" alt="black & white"></div>
 	<ul class="slides">
 	<li><img class="sliderElement" src="./slider3/dist/img/pvolley.jpeg" /></li>
-
-
-	<li><img class="sliderElement" src="./slider3/dist/img/pvolley2.jpg" /></li>
-
+	<li><video onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none" width="80%%" height="80%">
+		<source src="./slider3/dist/img/vidVolley2.mp4" type='video/mp4' />
+		</video></li>
+		<li><img class="sliderElement" src="./slider3/dist/img/pvolley2.jpg" /></li>
 	<li><img class="sliderElement"  src="./slider3/dist/img/pvolley3.jpeg" /></li>
+	<li><video onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none" width="80%%" height="80%">
+		<source src="./slider3/dist/img/vidVolley3.mp4" type='video/mp4' />
+		</video></li>
 	<li><img class="sliderElement"  src="./slider3/dist/img/pvolley4.jpeg" /></li>
+	<li><video onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none" width="80%%" height="80%">
+		<source src="./slider3/dist/img/vidVolley4.mp4" type='video/mp4' />
+		</video></li>
 	<li><img class="sliderElement"  src="./slider3/dist/img/pvolley7.jpg" /></li>
 	<li><img class="sliderElement"  src="./slider3/dist/img/pvolley8.jpeg" /></li>
 	<li><img class="sliderElement"  src="./slider3/dist/img/pvolley10.jpeg" /></li>
@@ -574,34 +609,32 @@
   .then((response) => {
     console.log(response);
   });;
-	
-	var sliderHeight = window.outerHeight;
-	var sliderWidth = window.outerWidth;
-	var portrait = "true";
+		
+		var sliderHeight = window.outerHeight;
+		var sliderWidth = window.outerWidth;
+		var portrait = "true";
 
-	if(sliderHeight > sliderWidth){
-	  console.log("portrait")
-	  sliderWidth = sliderWidth - 60;
-	  $(".sliderElement").css("height" , "auto");
-	  $(".sliderElement").css("width" , "100%");
-	  portrait = "true"
-	}else{
-	  console.log("paysage")
-	  sliderWidth = sliderWidth - 60;
-	  sliderHeight = sliderHeight - 200;
-	  $(".sliderElement").css("height" , sliderHeight+"px");
-	  $(".sliderElement").css("width" , "auto");
-	  portrait = "false"
-	}
+		if(sliderHeight > sliderWidth){
+		console.log("portrait")
+		sliderWidth = sliderWidth - 60;
+		$(".sliderElement").css("height" , "auto");
+		$(".sliderElement").css("width" , "100%");
+		portrait = "true"
+		}else{
+		console.log("paysage")
+		sliderWidth = sliderWidth - 60;
+		sliderHeight = sliderHeight - 200;
+		$(".sliderElement").css("height" , sliderHeight+"px");
+		$(".sliderElement").css("width" , "auto");
+		portrait = "false"
+		}
 
 
-	if($( ".flexslider .slides>li" ).hasClass( "flex-active-slide" )){
-	console.log("fsdfasdg");
-	$( ".flexslider .slides>li" ).attr("style" , "display:block !important")
-	}else{
-	  console.log("asbav");
-	  $( ".flexslider .slides>li" ).attr("style" , "display:none !important")
-	}
+		if($( ".flexslider .slides>li" ).hasClass( "flex-active-slide" )){
+			$( ".flexslider .slides>li" ).attr("style" , "display:block !important")
+		}else{
+			$( ".flexslider .slides>li" ).attr("style" , "display:none !important")
+		}
   });
 
   $( window ).resize(function() {
@@ -623,7 +656,7 @@
 	  $(".sliderElement").css("width" , "auto");
 	  portrait = "false"
 	}
-
+	
 	/* var settings = {
           'cache': false,
           'dataType': "jsonp",
