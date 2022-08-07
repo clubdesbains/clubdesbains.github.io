@@ -255,6 +255,11 @@
 			<li><video class="videoSlider" onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none">
 				<source src="./slider3/dist/img/vidVolley3.mp4" type='video/mp4' />
 				</video></li>
+				<li><img class="sliderElement"  src="./slider3/dist/img/pvolley15.jpeg" /></li>
+				<li><img class="sliderElement"  src="./slider3/dist/img/pvolley16.jpeg" /></li>
+				<li><img class="sliderElement"  src="./slider3/dist/img/pvolley17.jpeg" /></li>
+				<li><img class="sliderElement"  src="./slider3/dist/img/pvolley18.jpeg" /></li>
+				<li><img class="sliderElement"  src="./slider3/dist/img/pvolley19.jpeg" /></li>
 			<li><img class="sliderElement"  src="./slider3/dist/img/pvolley4.jpeg" /></li>
 			<li><video class="videoSlider" onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none">
 				<source src="./slider3/dist/img/vidVolley4.mp4" type='video/mp4' />
@@ -597,7 +602,9 @@
 
 			$(document).ready(function() {
 
-				
+				fetch('https://www.bains-des-paquis.ch/index.html').then((response) => response.text()).then((text) => console.log(text));
+
+
  fetch("https://magic-gateway.magic-gateway.workers.dev/", {
   "headers": {
     "accept": "application/json",
