@@ -1,433 +1,622 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <!--
 	Massively by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-				<title>Club Des Bains ☀️</title>
-				<meta charset="utf-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <head>
+    <title>Club Des Bains ☀️</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
 
-				<meta name="Club Des Bains" content= "Des gens qui ne boudent pas. Tous pareils, toutes différentes.">
+    <meta
+      name="Club Des Bains"
+      content="Des gens qui ne boudent pas. Tous pareils, toutes différentes."
+    />
 
-				<link rel="stylesheet" href="assets/css/main.css" />
-			<!--<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>-->
-				<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/flexslider.min.css'>
-			<style>
-			#slider_container{
-				display:none;
-			position: fixed;
-			width: 100%;
-			background-color: rgba(255, 255, 255, 0.8);
-			height:100%;
-			z-index: 5;
-			}
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/flexslider.min.css"
+    />
+    <style>
+      #slider_container {
+        display: none;
+        position: fixed;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        height: 100%;
+        z-index: 5;
+      }
 
-			#jssor_1{
-				top:10%;
-				position:relative;
-				margin:0 auto;
-				top: 20%;
-				left:0px;
-				width:600px;
-				height:500px;
-				overflow:hidden;
-				visibility:hidden;
-			}
+      #jssor_1 {
+        top: 10%;
+        position: relative;
+        margin: 0 auto;
+        top: 20%;
+        left: 0px;
+        width: 600px;
+        height: 500px;
+        overflow: hidden;
+        visibility: hidden;
+      }
 
-			#slider_close {
-				top: -5%;
-				font-size: 25px;
-				font-weight: 700;
-				right: 1%;
-				position: fixed;
-				font-family: sans-serif;
-				color: black;
-				z-index: 5;
-				-webkit-text-stroke: 2px white;
-				cursor: pointer;
-			}
+      #slider_close {
+        top: -5%;
+        font-size: 25px;
+        font-weight: 700;
+        right: 1%;
+        position: fixed;
+        font-family: sans-serif;
+        color: black;
+        z-index: 5;
+        -webkit-text-stroke: 2px white;
+        cursor: pointer;
+      }
 
-			#slider_filter{
-				top: -2.5%;
-				font-size: 25px;
-				font-weight: 700;
-				right: 3%;
-				position: fixed;
-				font-family: sans-serif;
-				color: black;
-				z-index: 5;
-				-webkit-text-stroke: 2px white;
-				cursor: pointer;
-				width:22px;
-				height:22px;
-				border-radius:45px;
-				background-color: white;
-				border:5px solid black;
-			}
+      #slider_filter {
+        top: -2.5%;
+        font-size: 25px;
+        font-weight: 700;
+        right: 3%;
+        position: fixed;
+        font-family: sans-serif;
+        color: black;
+        z-index: 5;
+        -webkit-text-stroke: 2px white;
+        cursor: pointer;
+        width: 22px;
+        height: 22px;
+        border-radius: 45px;
+        background-color: white;
+        border: 5px solid black;
+      }
 
-			#picturesOverlay{
-				display:none;
-				position: fixed;
-				z-index: 6;
-				width: 100%;
-				margin: 0 auto;
-				text-align: center;
-				background-color: rgba(255, 255, 255, 0.8);
-			}
+      #picturesOverlay {
+        display: none;
+        position: fixed;
+        z-index: 6;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.8);
+      }
 
-			.imgPicturesOverlay{
-				width: 70%;
-				margin: 0 auto;
-				text-align: center;
-			}
+      .imgPicturesOverlay {
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+      }
 
-			.scoreLine {
-				padding-left: 0.5rem;
-				border-bottom: 1px solid;
-			}
+      .scoreLine {
+        padding-left: 0.5rem;
+        border-bottom: 1px solid;
+      }
 
-		.imgScores{
-			height:100px;
-			margin-top: 15px;
-			margin-bottom: -13px;
-			}
+      .imgScores {
+        height: 100px;
+        margin-top: 15px;
+        margin-bottom: -13px;
+      }
 
-			.flexslider .slides img {
-			width: auto;
-			display: initial;
-			height: 473px;
-			-moz-user-select: none;
-		}
+      .flexslider .slides img {
+        width: auto;
+        display: initial;
+        height: 473px;
+        -moz-user-select: none;
+      }
 
+      .flexslider .slides > li {
+        display: none;
+        -webkit-backface-visibility: hidden;
+      }
+      .flexslider .slides img {
+        width: auto;
+        display: initial;
+        height: auto;
+        -moz-user-select: none;
+        zoom: normal;
+      }
 
-		.flexslider .slides>li {
-			display: none;
-			-webkit-backface-visibility: hidden;
-		}
-		.flexslider .slides img {
-			width: auto;
-			display: initial;
-			height: auto;
-			-moz-user-select: none;
-			zoom: normal;
-		}
+      .flexslider {
+        text-align: center;
+        margin: 0 0 36px;
+        zoom: normal;
+        margin: 0;
+        position: absolute;
+        background-color: transparent;
+        background: transparent;
+        border: none;
+        top: 50%;
+        width: 100%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
 
-		.flexslider {
-			text-align: center;
-			margin: 0 0 36px;
-			zoom: normal;
-			margin: 0;
-			position: absolute;
-			background-color: transparent;
-			background:transparent;
-			border:none;
-			top: 50%;
-			width:100%;
-			-ms-transform: translateY(-50%);
-			transform: translateY(-50%);
-		}
+      .flexslider .slides {
+        zoom: normal;
+      }
 
-		.flexslider .slides {
-			zoom: normal;
-		}
+      .flex-active-slide {
+        display: block !important;
+      }
 
-		.flex-active-slide{
-			display: block !important;
-		}
+      .flex-direction-nav a {
+        height: 67px;
+      }
 
-		.flex-direction-nav a {
-			height: 67px;
-		}
+      .flex-direction-nav .flex-next {
+        -webkit-text-stroke: 2px white;
+        border: none;
+      }
 
-		.flex-direction-nav .flex-next {
-			-webkit-text-stroke: 2px white;
-			border:none;
-		}
+      .flex-direction-nav .flex-prev {
+        -webkit-text-stroke: 2px white;
+        border: none;
+      }
 
-		.flex-direction-nav .flex-prev {
-			-webkit-text-stroke: 2px white;
-			border:none;
-		}
+      main > .post header.major > h1,
+      #main > .post header.major h2 {
+        margin: 0 auto;
+      }
 
-		main > .post header.major > h1, #main > .post header.major h2 {
-			margin: 0 auto;
-		}
+      #main > .post header.major > .date {
+        margin-top: -4rem;
+      }
 
-		#main > .post header.major > .date {
-			margin-top: -4rem;
-		}
+      header.major > .date {
+        font-size: 1rem;
+        margin: 0 auto;
+      }
 
-		header.major > .date {
-			font-size: 1rem;
-			margin: 0 auto;
-		}
+      @media screen and (max-width: 896px) {
+        #intro {
+          padding: 3rem 2rem 1rem 2rem;
+          min-height: 45vh;
+        }
 
-		@media screen and (max-width: 896px){
-			#intro {
-				padding: 3rem 2rem 1rem 2rem;
-				min-height: 45vh;
-			}
+        #slider_filter {
+          top: 1%;
+          font-size: 25px;
+          font-weight: 700;
+          right: 7%;
+          position: absolute;
+          font-family: sans-serif;
+          color: black;
+          z-index: 5;
+          -webkit-text-stroke: 2px white;
+          cursor: pointer;
+          width: 20px;
+          height: 20px;
+          border-radius: 45px;
+          background-color: white;
+          border: 5px solid black;
+        }
 
-			#slider_filter {
-				top: 1%;
-				font-size: 25px;
-				font-weight: 700;
-				right: 7%;
-				position: absolute;
-				font-family: sans-serif;
-				color: black;
-				z-index: 5;
-				-webkit-text-stroke: 2px white;
-				cursor: pointer;
-				width: 20px;
-				height: 20px;
-				border-radius: 45px;
-				background-color: white;
-				border: 5px solid black;
-			}
+        #slider_close {
+          top: -2%;
+          font-size: 22px;
+          font-weight: 700;
+          right: 1%;
+          position: absolute;
+          font-family: sans-serif;
+          color: black;
+          z-index: 5;
+          -webkit-text-stroke: 2px white;
+          cursor: pointer;
+        }
 
-			#slider_close {
-				top: -2%;
-				font-size: 22px;
-				font-weight: 700;
-				right: 1%;
-				position: absolute;
-				font-family: sans-serif;
-				color: black;
-				z-index: 5;
-				-webkit-text-stroke: 2px white;
-				cursor: pointer;
-			}
+        .videoSlider {
+          width: 95%;
+          height: 95%;
+        }
+      }
 
-			.videoSlider {
-				width:95%;
-				height:95%;
-			}
+      @media screen and (max-width: 896px) and (orientation: landscape) {
+        .flexslider .slides img {
+          width: auto;
+          display: initial;
+          height: 330px !important;
+          -moz-user-select: none;
+          zoom: normal;
+        }
 
-		}
+        .flexslider {
+          position: relative;
+        }
 
-		@media screen and (max-width: 896px) and (orientation: landscape) {
-		.flexslider .slides img {
-			width: auto;
-			display: initial;
-			height: 330px !important;
-			-moz-user-select: none;
-			zoom: normal;
-		}
-
-		.flexslider {
-			position: relative;
-		}
-
-		#slider_close {
-			top: 6%;
-		}
-
-		}
-		</style>
-
-	</head>
-	<body class="is-preload">
-
-		<!-- Wrapper -->
-	<div id="wrapper" class="fade-in">
-
-				<div id="picturesOverlay">
-					<img class="imgPicturesOverlay" src="" alt="" />
-
-				</div>
-				<!-- partial:index.partial.html -->
-		<div id="slider_container">
-
-		<div id="slider" class="flexslider">
-			<div id="slider_close">X</div>
-			<!--<div id="slider_filter" class="blackwhite" alt="black & white"></div> -->
-			<ul class="slides">
-			<li><img class="sliderElement" src="./slider3/dist/img/pvolley.jpeg" /></li>
-			<li><video class="videoSlider" onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none">
-				<source src="./slider3/dist/img/vidVolley2.mp4" type='video/mp4' />
-				</video></li>
-				<li><img class="sliderElement" src="./slider3/dist/img/pvolley2.jpg" /></li>
-			<li><img class="sliderElement"  src="./slider3/dist/img/pvolley3.jpeg" /></li>
-			<li><video class="videoSlider" onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none">
-				<source src="./slider3/dist/img/vidVolley3.mp4" type='video/mp4' />
-				</video></li>
-				<li><img class="sliderElement"  src="./slider3/dist/img/pvolley15.jpeg" /></li>
-				<li><img class="sliderElement"  src="./slider3/dist/img/pvolley16.jpeg" /></li>
-				<li><img class="sliderElement"  src="./slider3/dist/img/pvolley17.jpeg" /></li>
-				<li><img class="sliderElement"  src="./slider3/dist/img/pvolley18.jpeg" /></li>
-				<li><img class="sliderElement"  src="./slider3/dist/img/pvolley19.jpeg" /></li>
-				<li><img class="sliderElement"  src="./slider3/dist/img/pvolley20.jpeg" /></li>
-			<li><img class="sliderElement"  src="./slider3/dist/img/pvolley4.jpeg" /></li>
-			<li><video class="videoSlider" onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none">
-				<source src="./slider3/dist/img/vidVolley4.mp4" type='video/mp4' />
-				</video></li>
-			<li><img class="sliderElement"  src="./slider3/dist/img/pvolley7.jpg" /></li>
-			<li><img class="sliderElement"  src="./slider3/dist/img/pvolley8.jpeg" /></li>
-			<li><img class="sliderElement"  src="./slider3/dist/img/pvolley10.jpeg" /></li>
-			<li><img class="sliderElement"  src="./slider3/dist/img/pvolley11.jpeg" /></li>
-			<!--<li><img src="https://archive.org/download/mbid-7fbdce41-848d-46e2-8d5e-d9cf5d9060d9/mbid-7fbdce41-848d-46e2-8d5e-d9cf5d9060d9-7915427835.jpg" /></li>
+        #slider_close {
+          top: 6%;
+        }
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper" class="fade-in">
+      <div id="picturesOverlay">
+        <img class="imgPicturesOverlay" src="" alt="" />
+      </div>
+      <!-- partial:index.partial.html -->
+      <div id="slider_container">
+        <div id="slider" class="flexslider">
+          <div id="slider_close">X</div>
+          <!--<div id="slider_filter" class="blackwhite" alt="black & white"></div> -->
+          <ul class="slides">
+            <li>
+              <img
+                class="sliderElement"
+                src="./slider3/dist/img/pvolley.jpeg"
+              />
+            </li>
+            <li>
+              <video
+                class="videoSlider"
+                onplay="pauseslider()"
+                onpause="playslider()"
+                onended="resumeslider()"
+                controls
+                preload="none"
+              >
+                <source
+                  src="./slider3/dist/img/vidVolley2.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </li>
+            <li>
+              <img
+                class="sliderElement"
+                src="./slider3/dist/img/pvolley2.jpg"
+              />
+            </li>
+            <li>
+              <img
+                class="sliderElement"
+                src="./slider3/dist/img/pvolley3.jpeg"
+              />
+            </li>
+            <li>
+              <video
+                class="videoSlider"
+                onplay="pauseslider()"
+                onpause="playslider()"
+                onended="resumeslider()"
+                controls
+                preload="none"
+              >
+                <source
+                  src="./slider3/dist/img/vidVolley3.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </li>
+            <li>
+              <img
+                class="sliderElement"
+                src="./slider3/dist/img/pvolley15.jpeg"
+              />
+            </li>
+            <li>
+              <img
+                class="sliderElement"
+                src="./slider3/dist/img/pvolley16.jpeg"
+              />
+            </li>
+            <li>
+              <img
+                class="sliderElement"
+                src="./slider3/dist/img/pvolley17.jpeg"
+              />
+            </li>
+            <li>
+              <img
+                class="sliderElement"
+                src="./slider3/dist/img/pvolley18.jpeg"
+              />
+            </li>
+            <li>
+              <img
+                class="sliderElement"
+                src="./slider3/dist/img/pvolley19.jpeg"
+              />
+            </li>
+            <li>
+              <img
+                class="sliderElement"
+                src="./slider3/dist/img/pvolley20.jpeg"
+              />
+            </li>
+            <li>
+              <img
+                class="sliderElement"
+                src="./slider3/dist/img/pvolley4.jpeg"
+              />
+            </li>
+            <li>
+              <video
+                class="videoSlider"
+                onplay="pauseslider()"
+                onpause="playslider()"
+                onended="resumeslider()"
+                controls
+                preload="none"
+              >
+                <source
+                  src="./slider3/dist/img/vidVolley4.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </li>
+            <li>
+              <img
+                class="sliderElement"
+                src="./slider3/dist/img/pvolley7.jpg"
+              />
+            </li>
+            <li>
+              <img
+                class="sliderElement"
+                src="./slider3/dist/img/pvolley8.jpeg"
+              />
+            </li>
+            <li>
+              <img
+                class="sliderElement"
+                src="./slider3/dist/img/pvolley10.jpeg"
+              />
+            </li>
+            <li>
+              <img
+                class="sliderElement"
+                src="./slider3/dist/img/pvolley11.jpeg"
+              />
+            </li>
+            <!--<li><img src="https://archive.org/download/mbid-7fbdce41-848d-46e2-8d5e-d9cf5d9060d9/mbid-7fbdce41-848d-46e2-8d5e-d9cf5d9060d9-7915427835.jpg" /></li>
 			<li><video onplay=pauseslider() onpause=playslider() onended=resumeslider() controls preload="none" width="100%" height="100%" poster="https://archive.org/download/mbid-203a92a8-2e72-402a-9f69-a928c693077d/mbid-203a92a8-2e72-402a-9f69-a928c693077d-3882273894.jpg" >
 			<source src="https://archive.org/download/CEP158WS/CEP158WS_512kb.mp4" type='video/mp4' />
 			</video></li> -->
-			</ul>
-			</div>
-		</div>
-		<!-- partial -->
-		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
-		<script src='./slider3/dist/sliderScript.js'></script>
-		<script src="./slider3/dist/script2.js"></script>
-		
-		<script>
-		$(".picturesSliderButton").click(function() {
-			$("#slider_container").css("display" , "block");
-			});
-		
-		$("#slider_close").click(function() {
-			$("#slider_container").css("display" , "none");
-		});
+          </ul>
+        </div>
+      </div>
+      <!-- partial -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="./slider3/dist/sliderScript.js"></script>
+      <script src="./slider3/dist/script2.js"></script>
 
+      <script>
+        $(".picturesSliderButton").click(function () {
+          $("#slider_container").css("display", "block");
+        });
 
-		</script>
+        $("#slider_close").click(function () {
+          $("#slider_container").css("display", "none");
+        });
+      </script>
 
+      <!-- Intro -->
+      <div id="intro">
+        <img
+          src="./images/logo.png"
+          style="max-height: 300px; padding-bottom: 28px"
+          ;
+        />
+        <h1>Club Des Bains</h1>
+        <p>Des gens qui ne boudent pas</p>
+        <ul class="actions" style="border: none">
+          <li style="border: none">
+            <a
+              href="#header"
+              class="button icon solid solo fa-arrow-down scrolly"
+              >Continue</a
+            >
+          </li>
+        </ul>
+      </div>
 
-				<!-- Intro -->
-					<div id="intro">
-						<img src="./images/logo.png" style="max-height: 300px; padding-bottom: 28px;";/>
-						<h1>Club Des Bains</h1>
-						<p>Des gens qui ne boudent pas</p>
-						<ul class="actions" style="border:none;">
-							<li style="border:none;"><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+      <!-- Header -->
+      <header id="header">
+        <a href="index.html" class="logo"
+          >Tous&#8239;pareils, toutes&#8239;différentes</a
+        >
+      </header>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Tous pareils, toutes différentes</a>
-					</header>
-
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Actualité</a></li>
-							<li><a href="#reglesTournoi">Règles du tournoi</a></li>
-							<li><a class="picturesSliderButton">Gallerie photos</a></li>
-						<!--	<li><a >Contact</a></li>-->
-						</ul>
-						<ul class="icons">
-							<!--<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li class="active"><a href="index.html">Actualité</a></li>
+          <li><a href="#reglesTournoi">Règles du tournoi</a></li>
+          <li><a class="picturesSliderButton">Gallerie photos</a></li>
+          <!--	<li><a >Contact</a></li>-->
+        </ul>
+        <ul class="icons">
+          <!--<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>-->
-						</ul>
-					</nav>
+        </ul>
+      </nav>
 
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<span class="date">09 Juillet, 2022</span>
-									<h2><a href="#">Tournoi de<br />
-									water volleyball</a></h2>
-										<!--<p>Un petit text explicatif ou rien.</p> -->
-								</header>
-								<a href="#" class="image main"><img src="images/volleyball1.png" alt="" /></a>
-								<!--<ul class="actions special">
+      <!-- Main -->
+      <div id="main">
+        <!-- Featured Post -->
+        <article class="post featured">
+          <header class="major">
+            <span class="date">09 Juillet, 2022</span>
+            <h2>
+              <a href="#"
+                >Tournoi de<br />
+                water volleyball</a
+              >
+            </h2>
+            <!--<p>Un petit text explicatif ou rien.</p> -->
+          </header>
+          <a href="#" class="image main"
+            ><img src="images/volleyball1.png" alt=""
+          /></a>
+          <!--<ul class="actions special">
 									<li><a href="#" class="button large">Full Story</a></li>
 								</ul>-->
-							</article>
+        </article>
 
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header id="reglesTournoi">
-															<!--  	<span class="date">April 24, 2017</span>-->
-										<h2><a href="#">Règles<br />
-										du tournoi</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/volleyVanRules.jpeg" alt="" /></a>
-									<p>Une fille minimum par équipe (6 personnes)<br />Pas de discussion avec l'arbitre<br />Ne pas aller du côté du terrain adverse<br />Pas de balle portée<br />Les services contre la ligne de fond</p>
-									<!--  <ul class="actions special">
+        <!-- Posts -->
+        <section class="posts">
+          <article>
+            <header id="reglesTournoi">
+              <!--  	<span class="date">April 24, 2017</span>-->
+              <h2>
+                <a href="#"
+                  >Règles<br />
+                  du tournoi</a
+                >
+              </h2>
+            </header>
+            <a href="#" class="image fit"
+              ><img src="images/volleyVanRules.jpeg" alt=""
+            /></a>
+            <p>
+              Une fille minimum par équipe (6 personnes)<br />Pas de discussion
+              avec l'arbitre<br />Ne pas aller du côté du terrain adverse<br />Pas
+              de balle portée<br />Les services contre la ligne de fond
+            </p>
+            <!--  <ul class="actions special">
 										<li><a href="#" class="button">Full Story</a></li>
 									</ul>-->
-								</article>
-								<article>
-									<header>
-										<!--  	<span class="date">April 24, 2017</span>-->
-										<h2><a class="picturesSliderButton">Gallerie<br /> Photos
-										</a></h2>
-									</header>
-									<a class="image fit"><img src="images/pvolley.jpeg" alt="" /></a>
-									<!--<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>-->
-									<!--<ul class="actions special">
+          </article>
+          <article>
+            <header>
+              <!--  	<span class="date">April 24, 2017</span>-->
+              <h2>
+                <a class="picturesSliderButton"
+                  >Gallerie<br />
+                  Photos
+                </a>
+              </h2>
+            </header>
+            <a class="image fit"><img src="images/pvolley.jpeg" alt="" /></a>
+            <!--<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>-->
+            <!--<ul class="actions special">
 										<li><a href="#" class="button">Full Story</a></li>
 									</ul>-->
-								</article>
-								<article style="width:100%;">
-									<header>
-										<!--  	<span class="date">April 24, 2017</span>-->
-										<h2><a href="#">Les<br />
-										scores</a></h2>
-									</header>
-									<div>
-										<ul style="list-style: none;">
-											<li class="scoreLine">
-												<img class="imgScores" src="images/lesplongeurs.jpeg" alt="" /> <img class="imgScores" src="images/gUnit2.jpeg" alt="" />	<br/>
-												Los Machuppos 15 - 10 G Unit
-											</li>
-											<li class="scoreLine">
-												<img class="imgScores" src="images/lospendejos.jpeg" alt="" /> <img class="imgScores" src="images/gUnit2.jpeg" alt="" />	<br/>Los Pendejos 11 - 15 Nixamam
-											</li>
-											<li class="scoreLine">
-												<img class="imgScores" src="images/pks.jpeg" alt="" /> <img class="imgScores" src="images/6gishts.jpeg" alt="" />	<br/>
-												PKS 11 - 15 6 Gisht's
-											</li>
-											<li class="scoreLine">
-												<img class="imgScores" src="images/bainsdespaquis.jpeg" alt="" /> <img class="imgScores" src="images/6gishts.jpeg" alt="" />	<br/>
-												Bains des Paquis 15 - 9 Les Loosers
-											</li>
-											<li class="scoreLine">
-												<img class="imgScores" src="images/gUnit2.jpeg" alt="" /> <img class="imgScores" src="images/6gishts.jpeg" alt="" />	<br/>
-												G Unit 15 - 3 Los Machupos
-											</li>
-											<li class="scoreLine">
-												<img class="imgScores" src="images/fcgeneve.jpeg" alt="" /> <img class="imgScores" src="images/nixamam.jpeg" alt="" />	<br/>
-												FC Genève 9 - 15 Nixamam
-											</li>
-											<li class="scoreLine">
-												<img class="imgScores" src="images/lesplongeurs.jpeg" alt="" /> <img class="imgScores" src="images/6gishts.jpeg" alt="" />	<br/>
-												Les Plongeurs 15 - 12 6 Gisht's
-											</li>
-											<li class="scoreLine">
-												<img class="imgScores" src="images/lesplongeurs.jpeg" alt="" /> <img class="imgScores" src="images/lesforceurs.jpeg" alt="" />	<br/>
-												Les Loosers 7 - 15 Les Forceurs
-											</li>
-											<li class="scoreLine">
-												<img class="imgScores" src="images/lospendejos.jpeg" alt="" /> <img class="imgScores" src="images/lesplongeurs.jpeg" alt="" />	<br/>
-												Los Pendejos 15 - 0 (forfait) Les loosers
-											</li>
-											<li class="scoreLine">
-												<img class="imgScores" src="images/lesplongeurs.jpeg" alt="" /> <img class="imgScores" src="images/pks.jpeg" alt="" />	<br/>
-												Les Plongeurs 6 - 15 PKS
-											</li>
-											<li class="scoreLine">
-												<img class="imgScores" src="images/lesforceurs.jpeg" alt="" /> <img class="imgScores" src="images/bainsdespaquis.jpeg" alt="" />	<br/>
-												Les Forceurs 15 - 9 Bains des Paquis
-											</li>
-										</ul>
-									</div>
-								<!--	<a href="#" style="width:50%;margin:0 auto;" class="image fit"><img src="images/pvolley3.jpeg" alt="" /></a>
+          </article>
+          <article style="width: 100%">
+            <header>
+              <!--  	<span class="date">April 24, 2017</span>-->
+              <h2>
+                <a href="#"
+                  >Les<br />
+                  scores</a
+                >
+              </h2>
+            </header>
+            <div>
+              <ul style="list-style: none">
+                <li class="scoreLine">
+                  <img
+                    class="imgScores"
+                    src="images/lesplongeurs.jpeg"
+                    alt=""
+                  />
+                  <img class="imgScores" src="images/gUnit2.jpeg" alt="" />
+                  <br />
+                  Los Machuppos 15 - 10 G Unit
+                </li>
+                <li class="scoreLine">
+                  <img class="imgScores" src="images/lospendejos.jpeg" alt="" />
+                  <img class="imgScores" src="images/gUnit2.jpeg" alt="" />
+                  <br />Los Pendejos 11 - 15 Nixamam
+                </li>
+                <li class="scoreLine">
+                  <img class="imgScores" src="images/pks.jpeg" alt="" />
+                  <img class="imgScores" src="images/6gishts.jpeg" alt="" />
+                  <br />
+                  PKS 11 - 15 6 Gisht's
+                </li>
+                <li class="scoreLine">
+                  <img
+                    class="imgScores"
+                    src="images/bainsdespaquis.jpeg"
+                    alt=""
+                  />
+                  <img class="imgScores" src="images/6gishts.jpeg" alt="" />
+                  <br />
+                  Bains des Paquis 15 - 9 Les Loosers
+                </li>
+                <li class="scoreLine">
+                  <img class="imgScores" src="images/gUnit2.jpeg" alt="" />
+                  <img class="imgScores" src="images/6gishts.jpeg" alt="" />
+                  <br />
+                  G Unit 15 - 3 Los Machupos
+                </li>
+                <li class="scoreLine">
+                  <img class="imgScores" src="images/fcgeneve.jpeg" alt="" />
+                  <img class="imgScores" src="images/nixamam.jpeg" alt="" />
+                  <br />
+                  FC Genève 9 - 15 Nixamam
+                </li>
+                <li class="scoreLine">
+                  <img
+                    class="imgScores"
+                    src="images/lesplongeurs.jpeg"
+                    alt=""
+                  />
+                  <img class="imgScores" src="images/6gishts.jpeg" alt="" />
+                  <br />
+                  Les Plongeurs 15 - 12 6 Gisht's
+                </li>
+                <li class="scoreLine">
+                  <img
+                    class="imgScores"
+                    src="images/lesplongeurs.jpeg"
+                    alt=""
+                  />
+                  <img class="imgScores" src="images/lesforceurs.jpeg" alt="" />
+                  <br />
+                  Les Loosers 7 - 15 Les Forceurs
+                </li>
+                <li class="scoreLine">
+                  <img class="imgScores" src="images/lospendejos.jpeg" alt="" />
+                  <img
+                    class="imgScores"
+                    src="images/lesplongeurs.jpeg"
+                    alt=""
+                  />
+                  <br />
+                  Los Pendejos 15 - 0 (forfait) Les loosers
+                </li>
+                <li class="scoreLine">
+                  <img
+                    class="imgScores"
+                    src="images/lesplongeurs.jpeg"
+                    alt=""
+                  />
+                  <img class="imgScores" src="images/pks.jpeg" alt="" /> <br />
+                  Les Plongeurs 6 - 15 PKS
+                </li>
+                <li class="scoreLine">
+                  <img class="imgScores" src="images/lesforceurs.jpeg" alt="" />
+                  <img
+                    class="imgScores"
+                    src="images/bainsdespaquis.jpeg"
+                    alt=""
+                  />
+                  <br />
+                  Les Forceurs 15 - 9 Bains des Paquis
+                </li>
+              </ul>
+            </div>
+            <!--	<a href="#" style="width:50%;margin:0 auto;" class="image fit"><img src="images/pvolley3.jpeg" alt="" /></a>
 									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
 									<ul class="actions special">
 										<li><a href="#" class="button">Full Story</a></li>
 									</ul> -->
-								</article>
-								<!--  <article>
+          </article>
+          <!--  <article>
 									<header>
 										
 										<h2><a href="#">Tempus sed<br />
@@ -463,10 +652,10 @@
 										<li><a href="#" class="button">Full Story</a></li>
 									</ul>
 								</article>	-->
-							</section>
+        </section>
 
-						<!-- Footer -->
-							<!--<footer>
+        <!-- Footer -->
+        <!--<footer>
 								<div class="pagination">
 									<a href="#" class="previous">Prev</a
 									<a href="#" class="page active">1</a>
@@ -479,11 +668,10 @@
 									<a href="#" class="next">Next</a>
 								</div>
 							</footer>-->
+      </div>
 
-					</div>
-
-				<!-- Footer -->
-					<!-- <footer id="footer">
+      <!-- Footer -->
+      <!-- <footer id="footer">
 						<section>
 							<form method="post" action="#">
 								<div class="fields">
@@ -531,52 +719,51 @@
 						</section>
 					</footer> -->
 
-				<!-- Copyright -->
-					<!--<div id="copyright">
+      <!-- Copyright -->
+      <!--<div id="copyright">
 						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
 					</div>-->
+    </div>
 
-	</div>
+    <!-- Scripts -->
+    <!--<script src="assets/js/jquery.min.js"></script> -->
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
-		<!-- Scripts -->
-			<!--<script src="assets/js/jquery.min.js"></script> -->
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <script>
+      $(".picturesSliderButton").click(function () {
+        $("#slider_container").css("display", "block");
+      });
 
-		<script>
-			$(".picturesSliderButton").click(function() {
-				$("#slider_container").css("display" , "block");
-			  });
+      $("#slider_close").click(function () {
+        $("#slider_container").css("display", "none");
+      });
 
-			$("#slider_close").click(function() {
-				$("#slider_container").css("display" , "none");
-			});
+      $("#slider_filter").click(function () {
+        if ($("#slider_filter").hasClass("blackwhite")) {
+          $(".flexslider .slides img").css("filter", "grayscale(100%)");
+          $("#slider_filter").attr("class", "colors");
+        } else {
+          $(".flexslider .slides img").css("filter", "grayscale(0%)");
+          $("#slider_filter").attr("class", "blackwhite");
+        }
+      });
 
-			$("#slider_filter").click(function() {
-				if($("#slider_filter").hasClass("blackwhite")){
-				$(".flexslider .slides img").css("filter" , "grayscale(100%)");
-				$("#slider_filter").attr("class" , "colors")
-			}else{
-				$(".flexslider .slides img").css("filter" , "grayscale(0%)");
-				$("#slider_filter").attr("class" , "blackwhite")
-			}
-			});
+      $(".imgScores").click(function () {
+        $("#picturesOverlay").css("display", "block");
+        var urlPicture = $(this).attr("src");
+        $(".imgPicturesOverlay").attr("src", urlPicture);
+      });
 
-			$(".imgScores").click(function() {
-				$("#picturesOverlay").css("display" , "block");
-				var urlPicture = $(this).attr('src');
-				$(".imgPicturesOverlay").attr("src" , urlPicture);
-			});
+      $("#picturesOverlay").click(function () {
+        $("#picturesOverlay").css("display", "none");
+      });
 
-			$("#picturesOverlay").click(function() {
-				$("#picturesOverlay").css("display" , "none");
-			});
-	
-			/*
+      /*
 			$('#slider').click(function() {
 				// do something here
 				console.log("fsdfasdg")
@@ -601,81 +788,99 @@
 				console.log("fsdfasdg")
 			});*/
 
-			$(document).ready(function() {
+      $(document).ready(function () {
+        fetch("https://www.bains-des-paquis.ch/index.html")
+          .then((response) => response.text())
+          .then((text) => console.log(text));
 
-				fetch('https://www.bains-des-paquis.ch/index.html').then((response) => response.text()).then((text) => console.log(text));
+        function randomTitre() {
+          function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+          }
+          var random = getRandomInt(4);
+          switch (random) {
+            case 0:
+              return "Tous&#8239;pareils, toutes&#8239;différentes";
+            case 1:
+              return "Tous&#8239;pareils, tous&#8239;différents";
+            case 2:
+              return "Toutes&#8239;pareilles, toutes&#8239;différentes";
+            case 3:
+              return "Toutes&#8239;pareilles, tous&#8239;différents";
+          }
+        }
 
+        document.querySelector("a.logo").innerHTML = randomTitre();
 
- fetch("https://magic-gateway.magic-gateway.workers.dev/", {
-  "headers": {
-    "accept": "application/json",
-    "accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",
-    "cache-control": "no-cache",
-    "content-type": "application/json; charset=UTF-8",
-    "pragma": "no-cache",
-	"Referer": "https://www.clubdesbains.ch"
-  },
-  "referrerPolicy": "strict-origin-when-cross-origin",
-  "body": "{\"url\": \"https://www.bains-des-paquis.ch/get_temperature\", \"method\": \"GET\", \"headers\": {}}",
-  "method": "POST",
-  "mode": "no-cors",
-  "credentials": "omit"
-}).then((response) => {
-	console.log(response.body);
-	return response.text();
-  })
-  .then((response) => {
-    console.log(response);
-  });;
-		
-		var sliderHeight = window.outerHeight;
-		var sliderWidth = window.outerWidth;
-		var portrait = "true";
+        /* fetch("https://magic-gateway.magic-gateway.workers.dev/", {
+			"headers": {
+				"accept": "application/json",
+				"accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",
+				"cache-control": "no-cache",
+				"content-type": "application/json; charset=UTF-8",
+				"pragma": "no-cache",
+				"Referer": "https://www.clubdesbains.ch"
+			},
+			"referrerPolicy": "strict-origin-when-cross-origin",
+			"body": "{\"url\": \"https://www.bains-des-paquis.ch/get_temperature\", \"method\": \"GET\", \"headers\": {}}",
+			"method": "POST",
+			"mode": "no-cors",
+			"credentials": "omit"
+			}).then((response) => {
+				console.log(response.body);
+				return response.text();
+			})
+			.then((response) => {
+				console.log(response);
+		});; */
 
-		if(sliderHeight > sliderWidth){
-		console.log("portrait")
-		sliderWidth = sliderWidth - 60;
-		$(".sliderElement").css("height" , "auto");
-		$(".sliderElement").css("width" , "100%");
-		portrait = "true"
-		}else{
-		console.log("paysage")
-		sliderWidth = sliderWidth - 60;
-		sliderHeight = sliderHeight - 200;
-		$(".sliderElement").css("height" , sliderHeight+"px");
-		$(".sliderElement").css("width" , "auto");
-		portrait = "false"
-		}
+        var sliderHeight = window.outerHeight;
+        var sliderWidth = window.outerWidth;
+        var portrait = "true";
 
+        if (sliderHeight > sliderWidth) {
+          console.log("portrait");
+          sliderWidth = sliderWidth - 60;
+          $(".sliderElement").css("height", "auto");
+          $(".sliderElement").css("width", "100%");
+          portrait = "true";
+        } else {
+          console.log("paysage");
+          sliderWidth = sliderWidth - 60;
+          sliderHeight = sliderHeight - 200;
+          $(".sliderElement").css("height", sliderHeight + "px");
+          $(".sliderElement").css("width", "auto");
+          portrait = "false";
+        }
 
-		if($( ".flexslider .slides>li" ).hasClass( "flex-active-slide" )){
-			$( ".flexslider .slides>li" ).attr("style" , "display:block !important")
-		}else{
-			$( ".flexslider .slides>li" ).attr("style" , "display:none !important")
-		}
-  });
+        if ($(".flexslider .slides>li").hasClass("flex-active-slide")) {
+          $(".flexslider .slides>li").attr("style", "display:block !important");
+        } else {
+          $(".flexslider .slides>li").attr("style", "display:none !important");
+        }
+      });
 
-  $( window ).resize(function() {
-	var sliderHeight = window.outerHeight;
-	var sliderWidth = window.outerWidth;
-	var portrait = "true";
+      $(window).resize(function () {
+        var sliderHeight = window.outerHeight;
+        var sliderWidth = window.outerWidth;
+        var portrait = "true";
 
-	if(sliderHeight > sliderWidth){
-	  console.log("portrait")
-	  sliderWidth = sliderWidth - 60;
-	  $(".sliderElement").css("height" , "auto");
-	  $(".sliderElement").css("width" , "100%");
-	  portrait = "true"
-	}else{
-	  console.log("paysage")
-	  sliderWidth = sliderWidth - 60;
-	  sliderHeight = sliderHeight - 200;
-	  $(".sliderElement").css("height" , sliderHeight+"px");
-	  $(".sliderElement").css("width" , "auto");
-	  portrait = "false"
-	}
-	
-	/* var settings = {
+        if (sliderHeight > sliderWidth) {
+          console.log("portrait");
+          sliderWidth = sliderWidth - 60;
+          $(".sliderElement").css("height", "auto");
+          $(".sliderElement").css("width", "100%");
+          portrait = "true";
+        } else {
+          console.log("paysage");
+          sliderWidth = sliderWidth - 60;
+          sliderHeight = sliderHeight - 200;
+          $(".sliderElement").css("height", sliderHeight + "px");
+          $(".sliderElement").css("width", "auto");
+          portrait = "false";
+        }
+
+        /* var settings = {
           'cache': false,
           'dataType': "jsonp",
           "async": true,
@@ -693,7 +898,7 @@
 
       }); */
 
-	  /* $.ajax({
+        /* $.ajax({
             headers: {"Accept": "application/json", "Origin": "www.clubdesbains.ch"},
             type: 'POST',
 			data: '{"url": "https://www.bains-des-paquis.ch/get_temperature", "method": "GET", "headers": {}}',
@@ -706,13 +911,7 @@
                 console.log(data);
             }
  }); */
-
-
-});
-
-
-			</script>
-
-
-	</body>
+      });
+    </script>
+  </body>
 </html>
