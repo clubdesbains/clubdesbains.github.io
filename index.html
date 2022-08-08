@@ -457,7 +457,7 @@
             <!--<p>Un petit text explicatif ou rien.</p> -->
           </header>
           <a href="#" class="image main"
-            ><img src="images/volleyball1.png" alt=""
+            ><img src="images/info/info1.png" class="info-image" alt=""
           /></a>
           <!--<ul class="actions special">
 									<li><a href="#" class="button large">Full Story</a></li>
@@ -793,10 +793,12 @@
           .then((response) => response.text())
           .then((text) => console.log(text));
 
-        function randomTitre() {
+        
           function getRandomInt(max) {
             return Math.floor(Math.random() * max);
           }
+
+        function randomTitre() {
           var random = getRandomInt(4);
           switch (random) {
             case 0:
@@ -809,8 +811,13 @@
               return "Toutes&#8239;pareilles, tous&#8239;différents";
           }
         }
+        function randomInfoImage() {
+          var random = getRandomInt(10) + 1;
+          return "images/info/info" + random + ".png";
+        }
 
         document.querySelector("a.logo").innerHTML = randomTitre();
+        document.querySelector("img.info-image").src = randomInfoImage();
 
         /* fetch("https://magic-gateway.magic-gateway.workers.dev/", {
 			"headers": {
