@@ -180,6 +180,28 @@
         max-height: 700px;
       }
 
+      .temp {
+        padding: 7px !important;
+        right: 30px;
+        text-align: right;
+        border: none;
+        border-bottom: none;
+        position: absolute;
+      }
+
+      .picto {
+        width: 35px;
+        margin: 8px;
+        height: auto;
+      }
+
+      .tempMet {
+        vertical-align: top;
+        position: relative;
+        top: 10px;
+        margin-top: 20px;
+      }
+
       @media screen and (max-width: 896px) {
         #intro {
           padding: 3rem 2rem 1rem 2rem;
@@ -636,6 +658,14 @@
 
       <!-- Main -->
       <div id="main">
+        <div class="temp">
+          <img class="picto meteo" src="./images/tempMeteo.png" /><span
+            class="tempMet tempMeteoValue"
+          ></span
+          ><img class="picto water" src="./images/tempWater.png" /><span
+            class="tempMet tempWaterValue"
+          ></span>
+        </div>
         <!-- Featured Post -->
         <article class="post featured">
           <header class="major">
@@ -1335,9 +1365,23 @@
 			});*/
 
       $(document).ready(function () {
-        fetch("https://www.bains-des-paquis.ch/index.html")
-          .then((response) => response.text())
-          .then((text) => console.log(text));
+        var tempWater = 0;
+        var tempMet = 0;
+        $.ajax({
+          url: "https://api.apify.com/v2/acts/apify~web-scraper/runs/last/dataset/items?token=apify_api_FBwNpGutgYh9N0PW2M2ABEJ3rC20ht1EOQvi",
+          dataType: "json",
+          success: function (data) {
+            tempMet = data[0].tempMeteo;
+            tempWater = data[0].tempEau;
+
+            console.log(data[0].tempMeteo);
+          },
+        });
+
+        setTimeout(function () {
+          $(".tempMeteoValue").text(tempMet);
+          $(".tempWaterValue").text(tempWater);
+        }, 700);
 
         function getRandomInt(max) {
           return Math.floor(Math.random() * max);
