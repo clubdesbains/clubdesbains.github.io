@@ -180,13 +180,23 @@
         max-height: 700px;
       }
 
+      #main > .post.featured {
+        text-align: center;
+        border: none !important;
+        padding-top: 40px !important;
+      }
+
       .temp {
         padding: 7px !important;
-        right: 30px;
+
         text-align: right;
         border: none;
         border-bottom: none;
-        position: absolute;
+        position: relative;
+      }
+
+      .temp :after {
+        border: none;
       }
 
       .picto {
@@ -202,10 +212,26 @@
         margin-top: 20px;
       }
 
+      @media screen and (max-width: 736px) {
+        .temp {
+          width: 100%;
+          display: block;
+          position: relative;
+          padding: 0px !important;
+        }
+      }
+
       @media screen and (max-width: 896px) {
         #intro {
           padding: 3rem 2rem 1rem 2rem;
           min-height: 45vh;
+        }
+
+        .temp {
+          width: 100%;
+          display: block;
+          position: relative;
+          padding: 0px !important;
         }
 
         #slider_filter {
@@ -1379,7 +1405,7 @@
         setTimeout(function () {
           $(".tempMeteoValue").text(tempMet);
           $(".tempWaterValue").text(tempWater);
-        }, 700);
+        }, 1200);
 
         function getRandomInt(max) {
           return Math.floor(Math.random() * max);
