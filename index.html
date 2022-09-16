@@ -1373,8 +1373,6 @@
           success: function (data) {
             tempMet = data[0].tempMeteo;
             tempWater = data[0].tempEau;
-
-            console.log(data[0].tempMeteo);
           },
         });
 
@@ -1435,13 +1433,11 @@
         var portrait = "true";
 
         if (sliderHeight > sliderWidth) {
-          console.log("portrait");
           sliderWidth = sliderWidth - 60;
           $(".sliderElement").css("height", "auto");
           $(".sliderElement").css("width", "100%");
           portrait = "true";
         } else {
-          console.log("paysage");
           sliderWidth = sliderWidth - 60;
           sliderHeight = sliderHeight - 200;
           $(".sliderElement").css("height", sliderHeight + "px");
@@ -1462,13 +1458,11 @@
         var portrait = "true";
 
         if (sliderHeight > sliderWidth) {
-          console.log("portrait");
           sliderWidth = sliderWidth - 60;
           $(".sliderElement").css("height", "auto");
           $(".sliderElement").css("width", "100%");
           portrait = "true";
         } else {
-          console.log("paysage");
           sliderWidth = sliderWidth - 60;
           sliderHeight = sliderHeight - 200;
           $(".sliderElement").css("height", sliderHeight + "px");
